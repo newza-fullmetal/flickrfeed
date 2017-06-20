@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var ShareButton: UIButton!
+    
     @IBOutlet weak var browserview: UIButton!
     
     
@@ -35,23 +37,32 @@ class ViewController: UIViewController {
     
     
     /**
-     
+        Share the image throw classical apps
+     */
+    @IBAction func ShareAction(_ sender: Any) {
+        if actualimage != nil{
+            let imagetoshare : Any = self.mainImg.image!
+            let activityViewController = UIActivityViewController(
+                activityItems: [imagetoshare],
+                applicationActivities: nil)
+//            if let popoverPresentationController = activityViewController.popoverPresentationController {
+//                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+//            }
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            present(activityViewController, animated: true, completion: nil)
+        }
+        else{
+            print("nothing to share")
+        }
+    }
+    
+    /**
+     Save the actual image to the galery
     */
     @IBAction func SaveinlocalAction(_ sender: Any) {
         print("FUNCTION : SaveinlocalAction")
         if let uiimage = self.mainImg.image {
-//            let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-//            let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(self.actualimage?.Title ?? "FLICKERFEED").jpg")
-//            print("photo saved in : \(String(describing: destinationPath))")
-//            do{
-//            try UIImageJPEGRepresentation(uiimage,1.0)?.write(to: destinationPath!, options: Data.WritingOptions.atomic)
-//            }
-//            catch let error as NSError {
-//                print(error.domain)
-//            }
-//            catch{
-//                fatalError()
-//            }
+
             UIImageWriteToSavedPhotosAlbum(uiimage, nil, nil, nil)
             
             let alert = UIAlertView(title: "GG !!!",
@@ -85,16 +96,12 @@ class ViewController: UIViewController {
             updateImg(image: image!)
         }
     }
-
-    
-    @IBAction func geoAction(sender: AnyObject) {
-    }
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
     }
  
     
@@ -105,18 +112,24 @@ class ViewController: UIViewController {
     
     
     
-    
+    /**
+        Select the next image if we have already one 
+    */
     @IBAction func NextImg(_ sender: Any) {
+        if self.actualimage != nil {
         let image = flickrcontroller.nextImage(actualImg: self.actualimage!)
             print("image received : ")
             print (image)
             updateImg(image: image)
+        }
         
     
     }
 
 
-    
+    /**
+        Upadate the image displayed
+    */
     func updateImg (image : Image!){
         if let imageData = NSData(contentsOf: (image.url)){
             DispatchQueue.main.async(execute: {
