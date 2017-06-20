@@ -14,6 +14,8 @@
 		8927AF231EF2B61B00B36C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8927AF211EF2B61B00B36C5E /* LaunchScreen.storyboard */; };
 		8927AF2E1EF2B61D00B36C5E /* Flicker_FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927AF2D1EF2B61D00B36C5E /* Flicker_FeedTests.swift */; };
 		8927AF391EF2B61D00B36C5E /* Flicker_FeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927AF381EF2B61D00B36C5E /* Flicker_FeedUITests.swift */; };
+		897EC2661EF8230300548FE5 /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897EC2651EF8230300548FE5 /* image.swift */; };
+		897EC26A1EF9049F00548FE5 /* FlickrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897EC2691EF9049F00548FE5 /* FlickrController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		8927AF341EF2B61D00B36C5E /* Flicker FeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flicker FeedUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8927AF381EF2B61D00B36C5E /* Flicker_FeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flicker_FeedUITests.swift; sourceTree = "<group>"; };
 		8927AF3A1EF2B61E00B36C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8927AF461EF3D2F200B36C5E /* testfeed.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testfeed.playground; sourceTree = "<group>"; };
+		897EC2651EF8230300548FE5 /* image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
+		897EC2691EF9049F00548FE5 /* FlickrController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +105,12 @@
 				8927AF181EF2B61A00B36C5E /* AppDelegate.swift */,
 				8927AF1A1EF2B61B00B36C5E /* ViewController.swift */,
 				8927AF1C1EF2B61B00B36C5E /* Main.storyboard */,
+				8927AF461EF3D2F200B36C5E /* testfeed.playground */,
 				8927AF1F1EF2B61B00B36C5E /* Assets.xcassets */,
 				8927AF211EF2B61B00B36C5E /* LaunchScreen.storyboard */,
 				8927AF241EF2B61C00B36C5E /* Info.plist */,
+				897EC2651EF8230300548FE5 /* image.swift */,
+				897EC2691EF9049F00548FE5 /* FlickrController.swift */,
 			);
 			path = "Flicker Feed";
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				TargetAttributes = {
 					8927AF141EF2B61A00B36C5E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XEHEC9B46E;
 						ProvisioningStyle = Automatic;
 					};
 					8927AF281EF2B61C00B36C5E = {
@@ -259,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897EC26A1EF9049F00548FE5 /* FlickrController.swift in Sources */,
 				8927AF1B1EF2B61B00B36C5E /* ViewController.swift in Sources */,
 				8927AF191EF2B61A00B36C5E /* AppDelegate.swift in Sources */,
+				897EC2661EF8230300548FE5 /* image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,11 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XEHEC9B46E;
 				INFOPLIST_FILE = "Flicker Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Swish-Live.Flicker-Feed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -424,11 +438,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XEHEC9B46E;
 				INFOPLIST_FILE = "Flicker Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Swish-Live.Flicker-Feed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -505,6 +522,7 @@
 				8927AF3F1EF2B61E00B36C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8927AF401EF2B61E00B36C5E /* Build configuration list for PBXNativeTarget "Flicker FeedTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +531,7 @@
 				8927AF421EF2B61E00B36C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8927AF431EF2B61E00B36C5E /* Build configuration list for PBXNativeTarget "Flicker FeedUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +540,7 @@
 				8927AF451EF2B61E00B36C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
